@@ -5,5 +5,5 @@ const app = express();
 
 app.use(express.json());
 
-
+app.use("", productController);
 module.exports = app;

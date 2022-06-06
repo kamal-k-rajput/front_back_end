@@ -6,9 +6,9 @@ const router = express.Router();
 
 router.get("/", async function (req, res) {
   const product = await Product.find().lean().exec();
-  return res.status(201).send(product);
+  return res.status(201).send({ message: "route working", status: true });
 });
-router.post("/", async function (req, res) {
+router.post("/products", async function (req, res) {
   const product = await Product.create(req.body).lean().exec();
   return res.status(201).send(product);
 });
